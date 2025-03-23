@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('title', trans('app.new_sms'))
- 
+
 @section('content')
 <div class="panel panel-primary">
 
@@ -8,11 +8,11 @@
         <div class="row">
             <div class="col-sm-12 text-left">
                 <h3>{{ trans('app.new_sms') }}</h3>
-            </div> 
+            </div>
         </div>
     </div>
 
-    <div class="panel-body"> 
+    <div class="panel-body">
         {{ Form::open(['url' => 'admin/sms/new', 'files' => true, 'class'=>'col-md-7 col-sm-8']) }}
 
             <div class="form-group @error('to') has-error @enderror">
@@ -26,13 +26,13 @@
                 <textarea name="message" id="message" class="form-control" placeholder="{{ trans('app.message') }}">{{ old('message') }}</textarea>
                 <span class="text-danger">{{ $errors->first('message') }}</span>
             </div>
- 
-            <div class="form-group">
+
+            <div class="form-group-btn">
                 <button class="button btn btn-info" type="reset"><span>{{ trans('app.reset') }}</span></button>
                 <button class="button btn btn-success" type="submit"><span>{{ trans('app.send') }}</span></button>
-            </div> 
+            </div>
 
         {{ Form::close() }}
     </div>
-</div>  
+</div>
 @endsection

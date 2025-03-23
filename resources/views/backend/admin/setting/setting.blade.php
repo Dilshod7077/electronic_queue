@@ -8,18 +8,18 @@
         <div class="row">
             <div class="col-sm-12 text-left">
                 <h3>{{ trans('app.app_setting') }}</h3>
-            </div> 
+            </div>
         </div>
     </div>
 
-    <div class="panel-body"> 
+    <div class="panel-body">
 
         {{ Form::open(['url' => 'admin/setting', 'files' => true, 'class'=>'col-md-7 col-sm-8']) }}
 
             <input type="hidden" name="id" value="{{ $setting->id }}">
-     
+
             <div class="form-group @error('title') has-error @enderror">
-                <label for="title">{{ trans('app.title') }} <i class="text-danger">*</i></label> 
+                <label for="title">{{ trans('app.title') }} <i class="text-danger">*</i></label>
                 <input type="text" name="title" id="title" class="form-control" placeholder="{{ trans('app.title') }}" value="{{ old('title')?old(
                 'title'):$setting->title }}">
                 <span class="text-danger">{{ $errors->first('title') }}</span>
@@ -65,19 +65,19 @@
                 <label for="lang-select">{{ trans('app.language') }} </label>
                 @yield('language')
                 <span class="text-danger">{{ $errors->first('language') }}</span>
-            </div> 
+            </div>
 
             <div class="form-group @error('timezone') has-error @enderror">
                 <label for="timezone">{{ trans('app.timezone') }} <i class="text-danger">*</i></label><br/>
                 {{ Form::select('timezone', $timezoneList, (old('timezone')?old(
                                 'timezone'):$setting->timezone) , [ 'class'=>'select2 form-control', "id"=>'timezone']) }}<br/>
                 <span class="text-danger">{{ $errors->first('timezone') }}</span>
-            </div> 
+            </div>
 
             <div class="form-group @error('favicon') has-error @enderror">
                 <label for="favicon">{{ trans('app.favicon') }} </label>
-                <img src="{{ asset((session('favicon')?session('favicon'):$setting->favicon)) }}" alt="favicon" class="img-thubnail thumbnail" width="50" height="50"> 
-                <input type="hidden" name="old_favicon" value="{{ ((session('favicon') != null) ? session('favicon') : $setting->favicon) }}">  
+                <img src="{{ asset((session('favicon')?session('favicon'):$setting->favicon)) }}" alt="favicon" class="img-thubnail thumbnail" width="50" height="50">
+                <input type="hidden" name="old_favicon" value="{{ ((session('favicon') != null) ? session('favicon') : $setting->favicon) }}">
                 <input type="file" name="favicon" id="favicon" class="form-control">
                 <span class="text-danger">{{ $errors->first('favicon') }}</span>
                 <span class="help-block">Diamension: (32x32)px</span>
@@ -85,23 +85,22 @@
 
             <div class="form-group @error('logo') has-error @enderror">
                 <label for="wlogo">{{ trans('app.logo') }}</label>
-                <img src="{{ asset($setting->logo) }}" alt="" class="img-thubnail thumbnail" width="200"> 
-                <input type="hidden" name="old_logo" value="{{ $setting->logo }}"> 
+                <img src="{{ asset($setting->logo) }}" alt="" class="img-thubnail thumbnail" width="200">
+                <input type="hidden" name="old_logo" value="{{ $setting->logo }}">
                 <input type="file" name="logo" id="wlogo">
                 <span class="text-danger">{{ $errors->first('logo') }}</span>
                 <span class="help-block">Diamension: (250x50)px</span>
             </div>
-     
-            
-            <div class="form-group">
+
+
+            <div class="form-group-btn">
                 <button class="button btn btn-info" type="reset"><span>{{ trans('app.reset') }}</span></button>
-                <button class="button btn btn-success" type="submit"><span>{{ trans('app.update') }}</span></button> 
+                <button class="button btn btn-success" type="submit"><span>{{ trans('app.update') }}</span></button>
             </div>
-        
+
         {{ Form::close() }}
 
     </div>
-</div> 
+</div>
 @endsection
 
- 

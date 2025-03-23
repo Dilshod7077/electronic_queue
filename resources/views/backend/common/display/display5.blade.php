@@ -28,12 +28,6 @@
       <div class="row">
          <div id="display5"></div>
       </div>
-
-      <div class="panel-footer col-xs-12">
-        @include('backend.common.info')
-        <span class="col-xs-10 text-left">@yield('info.powered-by')</span>
-        <span class="col-xs-2 text-right">@yield('info.version')</span>
-      </div>
     </div>
 </div>
 @endsection

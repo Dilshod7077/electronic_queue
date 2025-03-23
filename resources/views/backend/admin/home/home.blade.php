@@ -7,7 +7,7 @@
     <div class="panel-body">
 
         <div class="row">
-        <div class="col-sm-12 shadowed">
+        <div class="col-sm shadowed">
             <div class="btn btn-primary col-lg-2 col-md-4 col-sm-6 col-xs-12">
                 <div class="p-1">
                     <i class="fa fa-cubes fa-2x"></i>

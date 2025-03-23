@@ -319,7 +319,8 @@
 }
 
 .fa-lock:before {
-    content: "\f023"
+    content: "\f023";
+    color: #2D60FF;
 }
 
 .fa-flag:before {
@@ -983,7 +984,8 @@
 }
 
 .fa-envelope:before {
-    content: "\f0e0"
+    content: "\f0e0";
+    color: #2D60FF;
 }
 
 .fa-linkedin:before {

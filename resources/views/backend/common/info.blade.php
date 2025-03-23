@@ -18,11 +18,11 @@
 @stop
 
 @section('info.powered-by')
-    Разработчик <a href="http://clinic.tj" target="_blank">scorpion</a> ҳамаи ҳуқуқҳо ҳифз шудаас.
+    Разработчики: <a href="https://t.me/firdavs_03_03" target="_blank">Firdavs</a>, <a href="https://t.me/dilshod_friday" target="_blank"> Dilshod</a> ҳамаи ҳуқуқҳо ҳифз шудаас.
 @stop
 
 @section('info.version')
-    <span class="label label-primary hidden-xs">v4.1.0</span>
+    <span class="label label-primary hidden-xs">v1.0</span>
 @stop
 
 @if (strtolower(env('APP_ENV'))=='demo')

@@ -10,8 +10,8 @@
 .btn-default:active,
 .btn-default:focus,
 .btn-default:hover {
-    color: #3C8DBC;
-    background: #E0F7FF;
+    color: #16DBCC;
+    background: #DCFAF8;
 }
 
 .carousel-indicators li,
@@ -173,8 +173,8 @@ code,
 }
 
 table thead, table tfoot {
-    background: #e0f7ff !important;
-    color: #3C8DBC;
+    background: #DCFAF8 !important;
+    color: #16DBCC;
 }
 
 table tbody tr.selected {

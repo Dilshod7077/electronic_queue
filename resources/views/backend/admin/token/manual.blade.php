@@ -3,19 +3,19 @@
 
 @section('content')
 <div class="panel panel-primary">
- 
+
     <div class="panel-heading">
         <ul class="row list-inline m-0">
             <li class="col-xs-10 xs-view p-0 text-left" id="screen-title">
                 <h3>{{ trans('app.manual_token') }}</h3>
-            </li>         
+            </li>
             <li class="col-xs-2 p-0 text-right">
                 <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#infoModal">
                   <i class="fa fa-info-circle"></i>
                 </button>
-            </li> 
+            </li>
         </ul>
-    </div> 
+    </div>
 
     <div class="panel-body">
 
@@ -26,34 +26,34 @@
             @if($display->sms_alert)
             <div class="form-group @error('client_mobile') has-error @enderror">
                 <label for="client_mobile">{{ trans('app.client_mobile') }} <i class="text-danger">*</i></label><br/>
-                <input type="text" name="client_mobile" class="form-control" placeholder="{{ trans('app.client_mobile') }}"/>  
+                <input type="text" name="client_mobile" class="form-control" placeholder="{{ trans('app.client_mobile') }}"/>
                 <span class="text-danger">{{ $errors->first('client_mobile') }}</span>
-            </div>   
+            </div>
             @endif
 
             <div class="form-group @error('department_id') has-error @enderror">
                 <label for="department_id">{{ trans('app.department') }} <i class="text-danger">*</i></label><br/>
                 {{ Form::select('department_id', $departments, null, ['placeholder' => 'Select Option', 'class'=>'select2 form-control']) }}<br/>
                 <span class="text-danger">{{ $errors->first('department_id') }}</span>
-            </div> 
+            </div>
 
             <div class="form-group @error('counter_id') has-error @enderror">
                 <label for="user">{{ trans('app.counter') }} <i class="text-danger">*</i></label><br/>
                 {{ Form::select('counter_id', $counters, null, ['placeholder' => 'Select Option', 'class'=>'select2 form-control']) }}<br/>
                 <span class="text-danger">{{ $errors->first('counter_id') }}</span>
-            </div> 
+            </div>
 
             <div class="form-group @error('user_id') has-error @enderror">
                 <label for="user">{{ trans('app.officer') }} <i class="text-danger">*</i></label><br/>
                 {{ Form::select('user_id', $officers, null, ['placeholder' => 'Select Option', 'class'=>'select2 form-control']) }}<br/>
                 <span class="text-danger">{{ $errors->first('user_id') }}</span>
-            </div>  
+            </div>
 
             @if($display->show_note)
             <div class="form-group @error('note') has-error @enderror">
-                <label for="note">{{ trans('app.note') }} <i class="text-danger">*</i></label> 
+                <label for="note">{{ trans('app.note') }} <i class="text-danger">*</i></label>
                 <textarea name="note" id="note" class="form-control"  placeholder="{{ trans('app.note') }}">{{ old('note') }}</textarea>
-                <span class="text-danger">{{ $errors->first('note') }}</span> 
+                <span class="text-danger">{{ $errors->first('note') }}</span>
             </div>
             @endif
 
@@ -63,14 +63,14 @@
                 </label>
             </div>
 
-            <div class="form-group">
-                <button class="button btn btn-info" type="reset"><span>Reset</span></button>
-                <button class="button btn btn-success" type="submit"><span>Submit</span></button>
+            <div class="form-group-btn">
+                <button class="button btn btn-info" type="reset"><span>{{ trans('app.reset') }}</span></button>
+                <button class="button btn btn-success" type="submit"><span>{{ trans('app.save') }}</span></button>
             </div>
-      
+
         {{ Form::close() }}
-    </div> 
-</div>  
+    </div>
+</div>
 
 
 <!-- Modal -->
@@ -96,7 +96,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 @endsection
 
 @push('scripts')
@@ -111,8 +111,8 @@
         {
             errorMessage = "The Mobile No. field is required!";
             valid = false;
-        } 
-        else if(!$.isNumeric(mobile)) 
+        }
+        else if(!$.isNumeric(mobile))
         {
             errorMessage = "The Mobile No. is incorrect!";
             valid = false;
@@ -127,30 +127,30 @@
         {
             $(this).next().next().next().html(errorMessage);
             $('.modal button[type=submit]').addClass('hidden');
-        } 
+        }
         else
         {
             $(this).next().next().next().html(" ");
             $('.modal button[type=submit]').removeClass('hidden');
-        } 
-    }); 
-      
+        }
+    });
+
     var frm = $(".manualFrm");
     frm.on('submit', function(e){
       e.preventDefault();
       $.ajax({
         url: $(this).attr('action'),
         type: $(this).attr('method'),
-        dataType: 'json', 
+        dataType: 'json',
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        contentType: false,  
-        cache: false,  
+        contentType: false,
+        cache: false,
         processData: false,
         data:  new FormData($(this)[0]),
         success: function(data)
         {
             if (data.status)
-            { 
+            {
                 var content = "<style type=\"text/css\">@media print {"+
                     "html, body {display:block;margin:0!important; padding:0 !important;overflow:hidden;display:table;}"+
                     ".receipt-token {width:100vw;height:100vw;text-align:center}"+
@@ -158,7 +158,7 @@
                     ".receipt-token h1{margin:0;padding:0;font-size:15vw;line-height:20vw;text-align:center}"+
                     ".receipt-token ul{margin:0;padding:0;font-size:7vw;line-height:8vw;text-align:center;list-style:none;}"+
                     "}</style>";
-                    
+
                 content += "<div class=\"receipt-token\">";
                 content += "<h4>{{ \Session::get('app.title') }}</h4>";
                 content += "<h1>"+data.token.token_no+"</h1>";
@@ -171,15 +171,15 @@
                     content += "<li><strong>{{ trans('app.note') }} </strong>"+data.token.note+"</li>";
                 }
                 content += "<li><strong>{{ trans('app.date') }} </strong>"+data.token.created_at+"</li>";
-                content += "</ul>";  
-                content += "</div>";    
+                content += "</ul>";
+                content += "</div>";
 
-                // print 
+                // print
                 printThis(content);
 
-            } 
-            else 
-            {  
+            }
+            else
+            {
                 $("#output").html(data.exception).removeClass('hide');
             }
         },
@@ -192,5 +192,4 @@
 })();
 </script>
 @endpush
- 
- 
+
