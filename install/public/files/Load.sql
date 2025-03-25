@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
 DELETE FROM `setting`;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`id`, `title`, `description`, `logo`, `favicon`, `email`, `phone`, `address`, `copyright_text`, `direction`, `language`, `timezone`) VALUES
-  (1, 'Token - Queue Management System', 'Queue', 'public/assets/img/icons/logo.jpg', 'public/assets/img/icons/favicon.jpg', 'admin@example.com', '+325 252 222', 'Demo street, NY-10000', 'copyright@2020', NULL, 'en', 'Asia/Dhaka');
+  (1, 'Token - Queue Management System', 'Queue', 'public/assets/img/icons/logo.jpg', 'public/assets/img/icons/favicon.png', 'admin@example.com', '+325 252 222', 'Demo street, NY-10000', 'copyright@2020', NULL, 'en', 'Asia/Dhaka');
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 -- Dumping structure for table db_queue_pda.sms_history
