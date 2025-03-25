@@ -8422,7 +8422,7 @@ body.cm-login {
 #cm-menu .cm-logo {
     display: block;
     height: 50px;
-    background: url(../img/icons/logo.jpg) no-repeat 15px center transparent
+    /*background: url(../img/icons/logo.jpg) no-repeat 15px center transparent*/
 }
 
 /*loader*/

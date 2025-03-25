@@ -34,7 +34,7 @@
 
     <div class="text-center" style="padding:35px 0 30px 0;background:#fff;border-bottom:1px solid #ddd;">
         <h2 class="text-primary text-center text-uppercase">{{ \Session::get('app.title') }}</h2>
-        <img src="{{ asset('public/assets/img/icons/logo.jpg') }}" width="300" >
+        <img src="{{ asset('public/assets/img/icons/logo.png') }}" width="300" >
     </div>
 
     <div class="col-sm-6 col-md-4 col-lg-3" style="margin:30px auto; float:none;">

@@ -36,14 +36,14 @@
 
         <div class="loader">
             <div>
-                <span>I</span>
-                <span>D</span>
-                <span>O</span>
-                <span>R</span>
-                <span>A</span>
+                <span>E</span>
                 <span></span>
+                <span>N</span>
+                <span>A</span>
+                <span>V</span>
+                <span>B</span>
+                <span>A</span>
                 <span>T</span>
-                <span>J</span>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
         <div id="cm-menu">
             <nav class="cm-navbar cm-navbar-primary">
                 <div class="cm-flex"><a href="javascript:void(0)" class="cm-logo">
-                    <img src="{{ asset('public/assets/img/icons/logo.jpg') }}" width="210" height="50">
+                    <img src="{{ asset('public/assets/img/icons/logo.png') }}" width="200" height="40">
                 </a></div>
                 <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
             </nav>
